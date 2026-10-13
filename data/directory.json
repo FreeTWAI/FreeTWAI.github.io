@@ -1,6 +1,6 @@
 {
   "schema_version": "freedom.source-directory/v1",
-  "organization": "FreeTWAI-AI",
+  "organization": "FreeTWAI",
   "projects": [
     { "repository": "freedom-platform", "name": "共同平台", "description": "會員定位、公會、供貨、零售、開源作品與行銷的共同 API、資料庫及會員工作台。", "scope": "可運行的內部預覽；正式產品仍在建置。" },
     { "repository": "freedom-agent-kit", "name": "Agent 協作工具", "description": "使用固定版本協定與平台互動的 CLI／Agent 接線起點。", "scope": "原始碼與協定用戶端；授權由平台決定。" },
@@ -10,6 +10,6 @@
     { "repository": "freedom-project-template", "name": "新專案模板", "description": "Node 24 的可運行起點，附測試、資料邊界與新專案身分設定指引。", "scope": "每個新專案必須填寫自己的真實 GitHub 身分。" },
     { "repository": "freedom-project-page", "name": "專案介紹頁產生器", "description": "由公開 manifest 產生固定 HTML，保留来源與限制。", "scope": "只產生 artifact；不推定正式狀態或自動發布。" },
     { "repository": ".github", "name": "組織協作規範", "description": "組織介紹、協作表單、共用政策與工作流程起點。", "scope": "組織支援倉；不承載會員與交易資料。" },
-    { "repository": "FreeTWAI-AI.github.io", "name": "專案目錄", "description": "這份九個來源倉的導覽。", "scope": "以 GitHub Pages 發布這份導覽與 Discord 機器人隱私權政策；不代表各專案已上線。" }
+    { "repository": "FreeTWAI.github.io", "name": "專案目錄", "description": "這份九個來源倉的導覽。", "scope": "以 GitHub Pages 發布這份導覽與 Discord 機器人隱私權政策；不代表各專案已上線。" }
   ]
 }

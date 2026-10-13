@@ -47,7 +47,7 @@
         ]}
       ]},
       { "h": "公開的 GitHub Issue", "blocks": [
-        { "p": "你請小妹回報問題時，她會先貼出草稿，只有在你或管理員明確確認後才送出。送出的 Issue 是公開的，會建立在 FreeTWAI-AI 的公開 repo 之一（freedom-platform、freedom-skill-registry、freedom-storefront、freedom-supplier-client），內容包括：你的 Discord 顯示名稱（不含使用者 ID）、Discord 討論串與訊息連結、問題描述，以及截圖的文字說明。" },
+        { "p": "你請小妹回報問題時，她會先貼出草稿，只有在你或管理員明確確認後才送出。送出的 Issue 是公開的，會建立在 FreeTWAI 的公開 repo 之一（freedom-platform、freedom-skill-registry、freedom-storefront、freedom-supplier-client），內容包括：你的 Discord 顯示名稱（不含使用者 ID）、Discord 討論串與訊息連結、問題描述，以及截圖的文字說明。" },
         { "p": "截圖（來自觸發回報的訊息、它回覆的訊息，或你本人最近 30 分鐘內在該串的訊息，最多 4 張）會先移除中繼資料，再上傳到公開 repo teddashh/freeworkshop-issue-assets。這些公開內容不適用 30 天刪除規則。你提出要求時，我們會刪除該 Issue 並移除檔案，但副本仍可能留在 git 歷史、分支（fork）、快取或第三方封存中。未送出的草稿 24 小時後失效，30 天後刪除。" }
       ]},
       { "h": "你的選擇", "blocks": [
@@ -115,7 +115,7 @@
         ]}
       ]},
       { "h": "Public GitHub issues", "blocks": [
-        { "p": "When you ask the bot to report a problem, it first posts a draft, and files it only after you or an administrator explicitly confirms. A filed issue is public, in one of the FreeTWAI-AI public repositories (freedom-platform, freedom-skill-registry, freedom-storefront, freedom-supplier-client). It includes your Discord display name (not your user ID), links to the Discord thread and message, the problem description, and a text description of any screenshots." },
+        { "p": "When you ask the bot to report a problem, it first posts a draft, and files it only after you or an administrator explicitly confirms. A filed issue is public, in one of the FreeTWAI public repositories (freedom-platform, freedom-skill-registry, freedom-storefront, freedom-supplier-client). It includes your Discord display name (not your user ID), links to the Discord thread and message, the problem description, and a text description of any screenshots." },
         { "p": "Screenshots (from the triggering message, the message it replies to, or your own messages in that thread from the last 30 minutes; up to 4) have their metadata stripped and are uploaded to the public repository teddashh/freeworkshop-issue-assets. This public content is not subject to the 30-day deletion. On request we will delete the issue and remove the files, but copies may remain in git history, forks, caches or third-party archives. Unconfirmed drafts expire after 24 hours and are deleted after 30 days." }
       ]},
       { "h": "Your choices", "blocks": [
