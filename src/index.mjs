@@ -1,7 +1,7 @@
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 
 export function validateDirectory(input) {
-  if (input?.schema_version !== 'freedom.source-directory/v1' || input.organization !== 'FreeTWAI-AI' || !Array.isArray(input.projects) || input.projects.length > 100) throw new TypeError('Expected the FreeTWAI-AI public source directory');
+  if (input?.schema_version !== 'freedom.source-directory/v1' || input.organization !== 'FreeTWAI' || !Array.isArray(input.projects) || input.projects.length > 100) throw new TypeError('Expected the FreeTWAI public source directory');
   const seen = new Set();
   for (const project of input.projects) {
     if (!project || !/^(?:\.github|[A-Za-z0-9][A-Za-z0-9._-]{0,99})$/.test(project.repository ?? '') || project.repository.includes('..')) throw new TypeError('Invalid repository name');

@@ -5,7 +5,7 @@
 
 自由工坊公開原始碼導覽頁的產生器。 已有受限公開 repo 目錄與靜態 HTML 產生器；目前的目錄資料是導覽清單。
 
-先看[本倉 Issues](https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io/issues)與[現有 PR](https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io/pulls)。提出問題、這一輪範圍、完成條件與可投入時間，在 Issue 認領並協調重疊工作；維護者已直接派工時不必重複等待，將約定連回交接即可。使用自己的 fork／分支，PR 送到 **FreeTWAI-AI/FreeTWAI-AI.github.io:main**。
+先看[本倉 Issues](https://github.com/FreeTWAI/FreeTWAI.github.io/issues)與[現有 PR](https://github.com/FreeTWAI/FreeTWAI.github.io/pulls)。提出問題、這一輪範圍、完成條件與可投入時間，在 Issue 認領並協調重疊工作；維護者已直接派工時不必重複等待，將約定連回交接即可。使用自己的 fork／分支，PR 送到 **FreeTWAI/FreeTWAI.github.io:main**。
 
 交給 Agent 前先讓它讀 [AGENTS.md](AGENTS.md)。PR 寫明變更用途、使用者可見結果、驗證命令、限制與原 Issue；附上可公開的合成案例或重現方式。Issue／PR 是程式協作的記錄，平台名片與公會身分不取代 repo 維護者的審查。
 
@@ -44,5 +44,5 @@ npm run build
   必須另外確認該次部署成功，不能把建置通過當成已發布。
 
 組合失敗拒絕與後續正常變更的驗收記錄見
-[中央 PR #129](https://github.com/FreeTWAI-AI/freedom-platform/pull/129)。
+[中央 PR #129](https://github.com/FreeTWAI/freedom-platform/pull/129)。
 這項設定適用本目錄倉，不代表其他倉的 merge queue 或整體治理已完成。

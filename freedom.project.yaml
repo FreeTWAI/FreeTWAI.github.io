@@ -17,7 +17,7 @@
       "Organize public project metadata and repository links"
     ],
     "limitations": [
-      "Published only as the organization GitHub Pages site (https://freetwai-ai.github.io/); no custom production domain is configured",
+      "Published only as the organization GitHub Pages site (https://freetwai.github.io/); no custom production domain is configured",
       "Quality and release fields declare intended policy; they do not attest an enforced ruleset or a signed release",
       "NOASSERTION means licensing remains undecided; this metadata grants no additional reuse rights",
       "GitHub Pages (via .github/workflows/pages.yml on main) serves the source directory and the Discord bot privacy policy at /privacy/discord-bot/; linked projects are not published or certified by it"
@@ -28,9 +28,9 @@
     "accountable_team": null,
     "external_owner": {
       "type": "Organization",
-      "account_id": "331546855",
-      "login": "FreeTWAI-AI",
-      "html_url": "https://github.com/FreeTWAI-AI"
+      "account_id": "342048686",
+      "login": "FreeTWAI",
+      "html_url": "https://github.com/FreeTWAI"
     },
     "accountable_party_ref": "user:teddashh",
     "module_stewardship_ref": null,
@@ -47,8 +47,8 @@
     "security_contact": "https://github.com/teddashh"
   },
   "repository": {
-    "full_name": "FreeTWAI-AI/FreeTWAI-AI.github.io",
-    "html_url": "https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io",
+    "full_name": "FreeTWAI/FreeTWAI.github.io",
+    "html_url": "https://github.com/FreeTWAI/FreeTWAI.github.io",
     "repository_id": "1378081698",
     "default_branch": "main",
     "visibility": "public",
@@ -62,7 +62,7 @@
     "requested_trust_label": "incubating",
     "source": "generated",
     "canonical_platform_url": "https://staging.freetwai.com/",
-    "github_pages_url": "https://freetwai-ai.github.io/",
+    "github_pages_url": "https://freetwai.github.io/",
     "exception_reason": null,
     "required_sections": [
       "identity_and_status",
@@ -168,9 +168,9 @@
     ]
   },
   "links": {
-    "documentation": "https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io/blob/main/README.md",
+    "documentation": "https://github.com/FreeTWAI/FreeTWAI.github.io/blob/main/README.md",
     "demo": null,
-    "support": "https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io/issues",
-    "issues": "https://github.com/FreeTWAI-AI/FreeTWAI-AI.github.io/issues"
+    "support": "https://github.com/FreeTWAI/FreeTWAI.github.io/issues",
+    "issues": "https://github.com/FreeTWAI/FreeTWAI.github.io/issues"
   }
 }
