@@ -28,3 +28,19 @@ npm run build
 The artifacts are `dist/index.html` and `dist/privacy/discord-bot/index.html` (policy text in `data/privacy-discord-bot.json`). Entries in `data/directory.json` link only to public GitHub source repositories and state the current limitations. The directory does not claim that a linked project is deployed, reviewed, official or commercially ready. It does not load Platform member sessions, private projects, API credentials or a second project database.
 
 For an individual project's introduction page, use `freedom-project-page` with its checked public manifest. This source navigation list is not a copy of the canonical project registry or a signed-status service. Publishing this directory on GitHub Pages does not publish or certify any linked project.
+
+## Architecture and Deployment
+
+### Static Site Build Steps
+The project uses a custom Node.js build script (`scripts/build.mjs`) to generate static HTML.
+- Run `npm run build` to read the directory data from `data/directory.json` and privacy policy from `data/privacy-discord-bot.json`.
+- The output is written to the `dist/` directory as static HTML files (`dist/index.html` and `dist/privacy/discord-bot/index.html`).
+
+### GitHub Pages Workflow
+Deployment is automated via GitHub Actions in `.github/workflows/pages.yml`.
+- Pushing to the `main` branch triggers the workflow.
+- The workflow installs dependencies, runs tests (`npm test`), and executes the build script.
+- The resulting `dist/` folder is uploaded as a Pages artifact and deployed to the `github-pages` environment (https://freetwai.github.io/).
+
+### Asset Optimization Pipeline
+There is currently no automated asset optimization pipeline (e.g., image compression or JS/CSS minification) since the project outputs minimal, statically generated HTML.
