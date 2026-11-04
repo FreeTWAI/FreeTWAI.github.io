@@ -40,3 +40,48 @@ test('does not swallow sentence-ending periods into links', () => {
   const html = renderPrivacyPage(page);
   assert.doesNotMatch(html, /href="[^"]*\."/);
 });
+
+test('validates section and block properties', () => {
+  const basePage = structuredClone(page);
+
+  // Invalid section objects (empty string header, missing/empty blocks)
+  basePage.zh.sections[0].h = '   ';
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh section/);
+  basePage.zh.sections[0].h = 'Header';
+  basePage.zh.sections[0].blocks = undefined;
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh section/);
+  basePage.zh.sections[0].blocks = [];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh section/);
+
+  // Invalid blocks (missing p and ul, or empty arrays, or non-string items in ul)
+  basePage.zh.sections[0].blocks = [{}];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh block in "Header"/);
+  basePage.zh.sections[0].blocks = [{ p: '   ' }];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh block in "Header"/);
+  basePage.zh.sections[0].blocks = [{ ul: [] }];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh block in "Header"/);
+  basePage.zh.sections[0].blocks = [{ ul: ['valid', '   '] }];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh block in "Header"/);
+  basePage.zh.sections[0].blocks = [{ ul: ['valid', 123] }];
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid zh block in "Header"/);
+});
+
+test('validates effective date', () => {
+  const basePage = structuredClone(page);
+
+  basePage.effective_date = undefined;
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid effective date/);
+
+  basePage.effective_date = '2026-9-28';
+  assert.throws(() => validatePrivacyPage(basePage), /Invalid effective date/);
+});
+
+test('handles missing eyebrow fallback', () => {
+  const basePage = structuredClone(page);
+
+  delete basePage.zh.eyebrow;
+  const html = renderPrivacyPage(basePage);
+
+  // Check that the eyebrow paragraph is rendered empty instead of "undefined"
+  assert.match(html, /<p class="eyebrow"><\/p>/);
+});
