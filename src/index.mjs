@@ -1,12 +1,14 @@
-const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+const ESCAPE_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ESCAPE_MAP[character]);
 
 export function validateDirectory(input) {
   if (input?.schema_version !== 'freedom.source-directory/v1' || input.organization !== 'FreeTWAI' || !Array.isArray(input.projects) || input.projects.length > 100) throw new TypeError('Expected the FreeTWAI public source directory');
   const seen = new Set();
   for (const project of input.projects) {
     if (!project || !/^(?:\.github|[A-Za-z0-9][A-Za-z0-9._-]{0,99})$/.test(project.repository ?? '') || project.repository.includes('..')) throw new TypeError('Invalid repository name');
-    if (seen.has(project.repository.toLowerCase())) throw new TypeError('Duplicate repository');
-    seen.add(project.repository.toLowerCase());
+    const repoLower = project.repository.toLowerCase();
+    if (seen.has(repoLower)) throw new TypeError('Duplicate repository');
+    seen.add(repoLower);
     for (const key of ['name', 'description', 'scope']) if (typeof project[key] !== 'string' || !project[key].trim() || project[key].length > 500) throw new TypeError(`Invalid ${key}`);
   }
   return input;

@@ -1,4 +1,5 @@
-const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+const ESCAPE_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ESCAPE_MAP[character]);
 
 // Escape first, then link only https URLs and plain e-mail addresses (no raw HTML from data).
 const linkify = (text) => escapeHtml(text)
